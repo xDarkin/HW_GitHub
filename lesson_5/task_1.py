@@ -8,6 +8,12 @@ while num > 0:
         b = c % 10
         if a == b:
             print("Yes")
+            break
         else:
             num_1 //= 10
-    num //= 10
+    if a == b:
+        break
+    else:
+        num //= 10
+else:
+    print("No")
