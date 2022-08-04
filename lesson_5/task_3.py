@@ -8,11 +8,11 @@ while True:
         i = int(input("Введіть ціле число: "))
         count += 1
         sum1 += i
-        if (sum1 / count) <= ((i + i) / 2):
+        if (sum1 / count) <= ((i + i) / 2) and i != 0:
             max1 = i
         else:
             max1 = max1
-        if (sum1 / count) >= ((i + i) / 2):
+        if (sum1 / count) >= ((i + i) / 2) and i != 0:
             min1 = i
         else:
             min1 = min1
