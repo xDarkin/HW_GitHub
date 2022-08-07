@@ -17,3 +17,4 @@ while num > 0:
         num //= 10
 else:
     print("No")
+
