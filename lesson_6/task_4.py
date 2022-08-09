@@ -1,0 +1,11 @@
+
+v = input("Input a string with at least 15 characters: ")
+print("a:", v[2])
+print("b:", v[-2])
+print("c:", v[:5])
+print("d:", v[:-2])
+print("e:", v[::2])
+print("f:", v[1::2])
+print("g;", v[::-1])
+print("h:", v[-1::-2])
+print("i:", len(v))
