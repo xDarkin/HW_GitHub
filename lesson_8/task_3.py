@@ -11,6 +11,8 @@ for i in range(0, 15):
     else:
         sum_a += n[i]
 
+print(sum_a, sum_b)
+
 if sum_a > sum_b:
     print("Yes")
 else:
