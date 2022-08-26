@@ -1,8 +1,7 @@
 
-def sum_check():
-    m = input("Введіть список чисел через пробіл: ")
-    m = [int(i) for i in m.split()]
-    x = int(input("Введіть число: "))
+def sum_check(*args):
+    m = args[0]
+    x = args[1]
     n = m
 
     for i in range(len(m)-1):
@@ -18,5 +17,5 @@ def sum_check():
         print(False)
 
 
-sum_check()
-sum_check()
+sum_check([1, 4, 5, 6, 8, 10, 24, 3], 6)
+sum_check([1, 4, 5, 12, 24], 50)
