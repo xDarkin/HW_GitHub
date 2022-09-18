@@ -1,5 +1,5 @@
 class BoardClass:
-    board: list = [[0 for i in range(20)] for j in range(10)]
+    board: list = [[0 for i in range(30)] for j in range(10)]
 
     def board_print(self):
         a = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
@@ -16,7 +16,7 @@ class BoardClass:
                 else:
                     print("", "X", end=" ")
             print("┃  ", a[i], end="   ")
-            for j in range(10, 20):
+            for j in range(20, 30):
                 print("┃", end="")
                 if board[i][j] == 0:
                     print("", " ", end=" ")
@@ -38,6 +38,6 @@ if __name__ == "__main__":
     board[0][0] = 1
     board[1][1] = 2
     board[2][2] = 3
-    board[0][10] = 3
-    board[9][19] = 3
+    board[0][20] = 3
+    board[9][29] = 3
     board.board_print()
