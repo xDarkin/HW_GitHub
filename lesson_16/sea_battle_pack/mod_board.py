@@ -22,7 +22,9 @@ class BoardClass:
                     print("", " ", end=" ")
                 elif board[i][j] == 1:
                     print("", ".", end=" ")
-                else:
+                elif board[i][j] == 2:
+                    print("", "▓", end=" ")
+                elif board[i][j] == 3:
                     print("", "X", end=" ")
             print("┃")
             print("┣━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━┫" + " "*7 + "┣━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━┫")
@@ -35,9 +37,7 @@ class BoardClass:
 
 if __name__ == "__main__":
     board = BoardClass()
-    board[0][0] = 1
-    board[1][1] = 2
-    board[2][2] = 3
-    board[0][20] = 3
-    board[9][29] = 3
+    import mod_ships
+    # ship = mod_ships.Ship()
+    mod_ships.pos_rand_en(board)
     board.board_print()
