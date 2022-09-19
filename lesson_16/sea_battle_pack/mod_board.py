@@ -3,28 +3,29 @@ class BoardClass:
 
     def board_print(self):
         a = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+        print("                  ЗСУ                                          свинособаки ")
         print("┏━━━" + "┳━━━" * 9 + "┓" + " "*7 + "┏━━━" + "┳━━━" * 9 + "┓")
         for i in range(10):
             for j in range(10):
                 print("┃", end="")
-                if self.board[i][j] == 0:
+                if self[i][j] == 0:
                     print("", " ", end=" ")
-                elif self.board[i][j] == 1:
+                elif self[i][j] == 1:
                     print("", ".", end=" ")
-                elif self.board[i][j] == 2:
+                elif self[i][j] == 2:
                     print("", "▓", end=" ")
                 else:
                     print("", "X", end=" ")
             print("┃  ", a[i], end="   ")
             for j in range(20, 30):
                 print("┃", end="")
-                if board[i][j] == 0:
+                if self[i][j] == 0:
                     print("", " ", end=" ")
-                elif board[i][j] == 1:
+                elif self[i][j] == 1:
                     print("", ".", end=" ")
-                elif board[i][j] == 2:
+                elif self[i][j] == 2:
                     print("", "▓", end=" ")
-                elif board[i][j] == 3:
+                elif self[i][j] == 3:
                     print("", "X", end=" ")
             print("┃")
             print("┣━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━┫" + " "*7 + "┣━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━╋━━━┫")
@@ -38,6 +39,5 @@ class BoardClass:
 if __name__ == "__main__":
     board = BoardClass()
     import mod_ships
-    # ship = mod_ships.Ship()
     mod_ships.pos_rand_en(board)
     board.board_print()
