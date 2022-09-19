@@ -40,4 +40,5 @@ if __name__ == "__main__":
     board = BoardClass()
     import mod_ships
     mod_ships.pos_rand_en(board)
+    mod_ships.pos_rand_pl(board)
     board.board_print()
