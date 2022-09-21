@@ -401,7 +401,7 @@ def pos_man(x, y):
     flag = True
     while flag:
         while True:
-            i_1 = input("Введіть літеру клітинки (А, В, С, ...): ")
+            i_1 = input("Введіть літеру першої клітинки (А, В, С, ...): ")
             if i_1 == "A" or i_1 == "a":
                 i = 0
                 break
@@ -661,24 +661,34 @@ def pos_manual(x):
     import mod_board
     x = mod_board.BoardClass()
     x.board_print()
+    print("Розмістіть чотирипалубник:")
     pos_man(x, ship.ship_41)
     x.board_print()
+    print("Розмістіть трипалубник:")
     pos_man(x, ship.ship_31)
     x.board_print()
+    print("Розмістіть трипалубник:")
     pos_man(x, ship.ship_32)
     x.board_print()
+    print("Розмістіть двопалубник:")
     pos_man(x, ship.ship_21)
     x.board_print()
+    print("Розмістіть двопалубник:")
     pos_man(x, ship.ship_22)
     x.board_print()
+    print("Розмістіть двопалубник:")
     pos_man(x, ship.ship_23)
     x.board_print()
+    print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_11)
     x.board_print()
+    print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_12)
     x.board_print()
+    print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_13)
     x.board_print()
+    print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_14)
     x.board_print()
 

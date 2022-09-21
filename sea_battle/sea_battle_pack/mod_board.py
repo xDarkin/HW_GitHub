@@ -3,7 +3,7 @@ class BoardClass:
 
     def board_print(self):
         a = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
-        print("                  ЗСУ                                          свинособаки ")
+        print("                   ЗСУ                                            русня ")
         print("┏━━━" + "┳━━━" * 9 + "┓" + " "*7 + "┏━━━" + "┳━━━" * 9 + "┓")
         for i in range(10):
             for j in range(10):
@@ -24,7 +24,7 @@ class BoardClass:
                 elif self[i][j] == 1:
                     print("", ".", end=" ")
                 elif self[i][j] == 2:
-                    print("", "▓", end=" ")
+                    print("", " ", end=" ")
                 elif self[i][j] == 3:
                     print("", "X", end=" ")
             print("┃")
@@ -44,4 +44,3 @@ if __name__ == "__main__":
     ship = mod_ships.Ship()
     mod_ships.pos_manual(board)
     # board.board_print()
-
