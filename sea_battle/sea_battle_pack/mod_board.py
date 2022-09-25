@@ -1,5 +1,10 @@
 class BoardClass:
     board: list = [[0 for i in range(32)] for j in range(12)]
+    for y in range(10):
+        board[0][1 + y] = 1
+        board[11][1 + y] = 1
+        board[1 + y][0] = 1
+        board[1 + y][11] = 1
 
     def board_print(self):
         a = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
@@ -40,10 +45,10 @@ if __name__ == "__main__":
     board = BoardClass()
     import mod_ships
     import shoot_player
-    # mod_ships.pos_rand_pl(board)
+    mod_ships.pos_rand_pl(board)
     ship = mod_ships.Ship()
     # shoot_player.shoot_pl(board)
-    mod_ships.pos_manual(board)
+    # mod_ships.pos_manual(board)
     mod_ships.pos_rand_en(board)
     board.board_print()
 
