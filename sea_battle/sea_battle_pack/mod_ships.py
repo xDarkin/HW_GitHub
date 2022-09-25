@@ -11,9 +11,14 @@ class Ship:
     ship_14 = 1
 
 
+p = []
+en_ships = []
+pl_ships = []
+
+
 def pos_rand(x, y):
     import random
-
+    global p
     for t in range(1000):
         flag = False
         k = random.randint(0, 1)
@@ -33,6 +38,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i, i + y + 1):
@@ -46,6 +53,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
             elif i == 10 - y:
                 if j == 29:
@@ -60,6 +69,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + y):
@@ -73,6 +84,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
             else:
                 if j == 29:
@@ -87,6 +100,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + y + 1):
@@ -100,6 +115,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
         # **********************************************************************************************************
         # **********************************************************************************************************
@@ -120,6 +137,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i, i + 2):
@@ -133,6 +152,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
             elif i == 9:
                 if j == 30 - y:
@@ -147,6 +168,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + 1):
@@ -160,6 +183,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
             else:
                 if j == 30 - y:
@@ -174,6 +199,8 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + 2):
@@ -187,26 +214,41 @@ def pos_rand(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
 
 
 def pos_rand_en(x):
     ship = Ship()
     pos_rand(x, ship.ship_41)
+    en_ship_41 = p
     pos_rand(x, ship.ship_31)
+    en_ship_31 = p
     pos_rand(x, ship.ship_32)
+    en_ship_32 = p
     pos_rand(x, ship.ship_21)
+    en_ship_21 = p
     pos_rand(x, ship.ship_22)
+    en_ship_22 = p
     pos_rand(x, ship.ship_23)
+    en_ship_23 = p
     pos_rand(x, ship.ship_11)
+    en_ship_11 = p
     pos_rand(x, ship.ship_12)
+    en_ship_12 = p
     pos_rand(x, ship.ship_13)
+    en_ship_13 = p
     pos_rand(x, ship.ship_14)
+    en_ship_14 = p
+    global en_ships
+    en_ships = [en_ship_41, en_ship_31, en_ship_32, en_ship_21, en_ship_22, en_ship_23,
+                en_ship_11, en_ship_12, en_ship_13, en_ship_14]
 
 
 def pos_rand_1(x, y):
     import random
-
+    global p
     for t in range(1000):
         flag = False
         k = random.randint(0, 1)
@@ -226,6 +268,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i, i + y + 1):
@@ -239,6 +283,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
             elif i == 10 - y:
                 if j == 9:
@@ -253,6 +299,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + y):
@@ -266,6 +314,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
             else:
                 if j == 9:
@@ -280,6 +330,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + y + 1):
@@ -293,6 +345,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
         # **********************************************************************************************************
         # **********************************************************************************************************
@@ -313,6 +367,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i, i + 2):
@@ -326,6 +382,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
             elif i == 9:
                 if j == 10 - y:
@@ -340,6 +398,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + 1):
@@ -353,6 +413,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
             else:
                 if j == 10 - y:
@@ -367,6 +429,8 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + 2):
@@ -380,25 +444,41 @@ def pos_rand_1(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
 
 
 def pos_rand_pl(x):
     ship = Ship()
     pos_rand_1(x, ship.ship_41)
+    pl_ship_41 = p
     pos_rand_1(x, ship.ship_31)
+    pl_ship_31 = p
     pos_rand_1(x, ship.ship_32)
+    pl_ship_32 = p
     pos_rand_1(x, ship.ship_21)
+    pl_ship_21 = p
     pos_rand_1(x, ship.ship_22)
+    pl_ship_22 = p
     pos_rand_1(x, ship.ship_23)
+    pl_ship_23 = p
     pos_rand_1(x, ship.ship_11)
+    pl_ship_11 = p
     pos_rand_1(x, ship.ship_12)
+    pl_ship_12 = p
     pos_rand_1(x, ship.ship_13)
+    pl_ship_13 = p
     pos_rand_1(x, ship.ship_14)
+    pl_ship_14 = p
+    global pl_ships
+    pl_ships = [pl_ship_41, pl_ship_31, pl_ship_32, pl_ship_21, pl_ship_22, pl_ship_23,
+                pl_ship_11, pl_ship_12, pl_ship_13, pl_ship_14]
 
 
 def pos_man(x, y):
     flag = True
+    global p
     while flag:
         while True:
             i_1 = input("Введіть літеру першої клітинки (А, В, С, ...): ")
@@ -490,6 +570,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i, i + y + 1):
@@ -504,6 +586,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
             elif i == 10 - y:
                 if j == 9:
@@ -519,6 +603,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + y):
@@ -533,6 +619,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
             else:
                 if j == 9:
@@ -548,6 +636,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + y + 1):
@@ -562,6 +652,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i + n][j] = 2
+                        v = [(i + n, j) for n in range(y)]
+                        p = v
                         break
         # **********************************************************************************************************
         # **********************************************************************************************************
@@ -581,6 +673,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i, i + 2):
@@ -595,6 +689,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
             elif i == 9:
                 if j == 10 - y:
@@ -610,6 +706,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + 1):
@@ -624,6 +722,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
             else:
                 if j == 10 - y:
@@ -639,6 +739,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
                 else:
                     for a in range(i - 1, i + 2):
@@ -653,6 +755,8 @@ def pos_man(x, y):
                     else:
                         for n in range(y):
                             x[i][j + n] = 2
+                        v = [(i, j + n) for n in range(y)]
+                        p = v
                         break
 
 
@@ -663,34 +767,47 @@ def pos_manual(x):
     x.board_print()
     print("Розмістіть чотирипалубник:")
     pos_man(x, ship.ship_41)
+    pl_ship_41 = p
     x.board_print()
     print("Розмістіть трипалубник:")
     pos_man(x, ship.ship_31)
+    pl_ship_31 = p
     x.board_print()
     print("Розмістіть трипалубник:")
     pos_man(x, ship.ship_32)
+    pl_ship_32 = p
     x.board_print()
     print("Розмістіть двопалубник:")
     pos_man(x, ship.ship_21)
+    pl_ship_21 = p
     x.board_print()
     print("Розмістіть двопалубник:")
     pos_man(x, ship.ship_22)
+    pl_ship_22 = p
     x.board_print()
     print("Розмістіть двопалубник:")
     pos_man(x, ship.ship_23)
+    pl_ship_23 = p
     x.board_print()
     print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_11)
+    pl_ship_11 = p
     x.board_print()
     print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_12)
+    pl_ship_12 = p
     x.board_print()
     print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_13)
+    pl_ship_13 = p
     x.board_print()
     print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_14)
+    pl_ship_14 = p
     x.board_print()
+    global pl_ships
+    pl_ships = [pl_ship_41, pl_ship_31, pl_ship_32, pl_ship_21, pl_ship_22, pl_ship_23,
+                pl_ship_11, pl_ship_12, pl_ship_13, pl_ship_14]
 
 
 if __name__ == "__main__":
