@@ -1,6 +1,18 @@
-p = [[(1, 2), (2, 3)], [(4, 5), (5, 6), (6, 4)], [(10, 12)]]
+import mod_ships
+import mod_board
+import shoot_player
 
-x = (1, 2)
+board = mod_board.BoardClass()
+ship = mod_ships.Ship()
 
-if (1, 2) in p[0]:
-    print("yes")
+mod_ships.pos_rand_en(board)
+board.board_print()
+# mod_ships.pos_manual(board)
+shoot_player.shoot_pl(board)
+print("************************************************************")
+shoot_player.shoot_pl(board)
+print("************************************************************")
+shoot_player.shoot_pl(board)
+print("************************************************************")
+shoot_player.shoot_pl(board)
+print("************************************************************")

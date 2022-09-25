@@ -1,12 +1,12 @@
 class BoardClass:
-    board: list = [[0 for i in range(30)] for j in range(10)]
+    board: list = [[0 for i in range(32)] for j in range(12)]
 
     def board_print(self):
         a = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
         print("                   ЗСУ                                            русня ")
         print("┏━━━" + "┳━━━" * 9 + "┓" + " "*7 + "┏━━━" + "┳━━━" * 9 + "┓")
-        for i in range(10):
-            for j in range(10):
+        for i in range(1, 11):
+            for j in range(1, 11):
                 print("┃", end="")
                 if self[i][j] == 0:
                     print("", " ", end=" ")
@@ -16,8 +16,8 @@ class BoardClass:
                     print("", "▓", end=" ")
                 else:
                     print("", "X", end=" ")
-            print("┃  ", a[i], end="   ")
-            for j in range(20, 30):
+            print("┃  ", a[i-1], end="   ")
+            for j in range(21, 31):
                 print("┃", end="")
                 if self[i][j] == 0:
                     print("", " ", end=" ")
@@ -40,12 +40,11 @@ if __name__ == "__main__":
     board = BoardClass()
     import mod_ships
     import shoot_player
+    # mod_ships.pos_rand_pl(board)
+    ship = mod_ships.Ship()
+    # shoot_player.shoot_pl(board)
+    mod_ships.pos_manual(board)
     mod_ships.pos_rand_en(board)
-    mod_ships.pos_rand_pl(board)
-    # ship = mod_ships.Ship()
-    # mod_ships.pos_manual(board)
     board.board_print()
-    shoot_player.shoot_pl(board)
-
 
 

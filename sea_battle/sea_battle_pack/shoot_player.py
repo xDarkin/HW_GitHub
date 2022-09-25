@@ -1,43 +1,56 @@
 import mod_ships
-import mod_board
+
+winner = ""
 
 
 def shoot_pl(x):
     flag = True
+    global winner
+
     while flag:
+        sum_1 = 0
+        for i in range(1, 11):
+            for j in range(21, 31):
+                if x[i][j] == 3:
+                    sum_1 += x[i][j]
+        if sum_1 == 60:
+            print("Вітаємо! Ви перемогли!!! Слава ЗСУ!!!")
+            winner = "player"
+            break
+
         while True:
             flag = False
-
+            print("Ваш постріл! Оберіть клітинку: ")
             i_1 = input("Введіть літеру клітинки (А, В, С, ...): ")
             if i_1 == "A" or i_1 == "a":
-                i = 0
-                break
-            elif i_1 == "B" or i_1 == "b":
                 i = 1
                 break
-            elif i_1 == "C" or i_1 == "c":
+            elif i_1 == "B" or i_1 == "b":
                 i = 2
                 break
-            elif i_1 == "D" or i_1 == "d":
+            elif i_1 == "C" or i_1 == "c":
                 i = 3
                 break
-            elif i_1 == "E" or i_1 == "e":
+            elif i_1 == "D" or i_1 == "d":
                 i = 4
                 break
-            elif i_1 == "F" or i_1 == "f":
+            elif i_1 == "E" or i_1 == "e":
                 i = 5
                 break
-            elif i_1 == "G" or i_1 == "g":
+            elif i_1 == "F" or i_1 == "f":
                 i = 6
                 break
-            elif i_1 == "H" or i_1 == "h":
+            elif i_1 == "G" or i_1 == "g":
                 i = 7
                 break
-            elif i_1 == "I" or i_1 == "i":
+            elif i_1 == "H" or i_1 == "h":
                 i = 8
                 break
-            elif i_1 == "J" or i_1 == "j":
+            elif i_1 == "I" or i_1 == "i":
                 i = 9
+                break
+            elif i_1 == "J" or i_1 == "j":
+                i = 10
                 break
             else:
                 print("Помилка вводу! Введіль літеру від A до J!")
@@ -46,7 +59,7 @@ def shoot_pl(x):
             j_1 = input("Введіть номер стовпця (від 1 до 10): ")
             if j_1.isdigit():
                 if 1 <= int(j_1) <= 10:
-                    j = int(j_1) - 1 + 20
+                    j = int(j_1) + 20
                     break
                 else:
                     print("Помилка вводу! Введіль цифру від 1 до 10!")
@@ -56,7 +69,7 @@ def shoot_pl(x):
         if x[i][j] == 1 or x[i][j] == 3:
             print("В цю клітинку вже було влучання! Оберіть іншу!")
             flag = True
-            break
+            continue
 
         if x[i][j] == 0:
             x[i][j] = 1
@@ -87,6 +100,7 @@ def shoot_pl(x):
                             x[mod_ships.en_ships[y][0][0] + 1][mod_ships.en_ships[y][0][1]] = 1
                             x[mod_ships.en_ships[y][0][0] + 1][mod_ships.en_ships[y][0][1] + 1] = 1
                             x.board_print()
+                            flag = True
                             continue
                         else:
                             if mod_ships.en_ships[y][0][0] == mod_ships.en_ships[y][1][0]:
@@ -97,6 +111,7 @@ def shoot_pl(x):
                                     x[mod_ships.en_ships[y][0][0] - 1][mod_ships.en_ships[y][0][1] - 1 + u] = 1
                                     x[mod_ships.en_ships[y][0][0] + 1][mod_ships.en_ships[y][0][1] - 1 + u] = 1
                                     x.board_print()
+                                    flag = True
                                     continue
                             else:
                                 x[mod_ships.en_ships[y][0][0] - 1][mod_ships.en_ships[y][0][1]] = 1
@@ -106,5 +121,5 @@ def shoot_pl(x):
                                     x[mod_ships.en_ships[y][0][0] - 1 + u][mod_ships.en_ships[y][0][1] - 1] = 1
                                     x[mod_ships.en_ships[y][0][0] - 1 + u][mod_ships.en_ships[y][0][1] + 1] = 1
                                     x.board_print()
+                                    flag = True
                                     continue
-
