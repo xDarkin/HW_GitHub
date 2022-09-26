@@ -19,7 +19,7 @@ pl_ships = []
 def pos_rand(x, y):
     import random
     global p
-    for t in range(1000):
+    for t in range(10000):
         flag = False
         k = random.randint(0, 1)
         if k == 0:
@@ -27,7 +27,7 @@ def pos_rand(x, y):
             j = random.randint(21, 30)
             for a in range(i - 1, i + y + 1):
                 for b in range(j - 1, j + 2):
-                    if x[a][b] != 0:
+                    if x[a][b] != 0 and x[a][b] != 1:
                         flag = True
                         break
             if flag:
@@ -45,7 +45,7 @@ def pos_rand(x, y):
             j = random.randint(21, 31 - y)
             for a in range(i - 1, i + 2):
                 for b in range(j - 1, j + y + 1):
-                    if x[a][b] != 0:
+                    if x[a][b] != 0 and x[a][b] != 1:
                         flag = True
                         break
             if flag:
@@ -89,7 +89,7 @@ def pos_rand_en(x):
 def pos_rand_1(x, y):
     import random
     global p
-    for t in range(1000):
+    for t in range(10000):
         flag = False
         k = random.randint(0, 1)
         if k == 0:
@@ -97,7 +97,7 @@ def pos_rand_1(x, y):
             j = random.randint(1, 10)
             for a in range(i - 1, i + y + 1):
                 for b in range(j - 1, j + 2):
-                    if x[a][b] != 0:
+                    if x[a][b] != 0 and x[a][b] != 1:
                         flag = True
                         break
             if flag:
@@ -115,7 +115,7 @@ def pos_rand_1(x, y):
             j = random.randint(1, 11 - y)
             for a in range(i - 1, i + 2):
                 for b in range(j - 1, j + y + 1):
-                    if x[a][b] != 0:
+                    if x[a][b] != 0 and x[a][b] != 1:
                         flag = True
                         break
             if flag:
@@ -238,7 +238,7 @@ def pos_man(x, y):
         if k == 0:
             for a in range(i - 1, i + y + 1):
                 for b in range(j - 1, j + 2):
-                    if x[a][b] != 0:
+                    if x[a][b] != 0 and x[a][b] != 1:
                         flag = True
                         print("Неможливо розташувати! Між кораблями повинна бути вільна клітинка!")
                         break
@@ -255,7 +255,7 @@ def pos_man(x, y):
         else:
             for a in range(i - 1, i + 2):
                 for b in range(j - 1, j + y + 1):
-                    if x[a][b] != 0:
+                    if x[a][b] != 0 and x[a][b] != 1:
                         flag = True
                         print("Неможливо розташувати! Між кораблями повинна бути вільна клітинка!")
                         break

@@ -51,5 +51,6 @@ if __name__ == "__main__":
     # mod_ships.pos_manual(board)
     mod_ships.pos_rand_en(board)
     board.board_print()
+    print(board[0][0])
 
 
