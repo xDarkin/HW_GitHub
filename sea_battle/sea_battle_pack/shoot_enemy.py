@@ -27,21 +27,23 @@ def shoot_en(x):
             break
 
         # print(input("Постріл ворога. Натисніть клавішу Enter: "))
-        # n = -1
-        for n in range(50):
+        n = -1
+        while n < 49:
             flag = False
-            # n += 1
-            if x[seq[n][0]][seq[n][1]] == 1 or x[seq[n][0]][seq[n][1]] == 3:
+            n += 1
+            if x[seq[n][0]][seq[n][1]] == 1:
+                continue
+            if x[seq[n][0]][seq[n][1]] == 3:
                 continue
             elif x[seq[n][0]][seq[n][1]] == 0:
                 x[seq[n][0]][seq[n][1]] = 1
-                print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
                 x.board_print()
+                print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
                 break
             elif x[seq[n][0]][seq[n][1]] == 2:
                 x[seq[n][0]][seq[n][1]] = 3
-                print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                 x.board_print()
+                print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                 for y in range(10):
                     if (seq[n][0], seq[n][1]) in mod_ships.pl_ships[y]:
                         for u in range(len(mod_ships.pl_ships[y])):
@@ -49,7 +51,24 @@ def shoot_en(x):
                                 flag = True
                                 break
                 if flag:
-                    continue
+                    for m in range(1, 4):
+                        if x[seq[n][0] - n][seq[n][1]] == 1:
+                            continue
+                        if x[seq[n][0] - n][seq[n][1]] == 3:
+                            continue
+                        elif x[seq[n][0] - n][seq[n][1]] == 0:
+                            x[seq[n][0] - n][seq[n][1]] = 1
+                            x.board_print()
+                            print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                            break
+                        elif x[seq[n][0] - n][seq[n][1]] == 2:
+                            x[seq[n][0] - n][seq[n][1]] = 3
+                            x.board_print()
+                            print(input("Ворог поцілив. Натисніть клавішу Enter: "))
+
+
+
+
                 else:
                     for y in range(10):
                         if (seq[n][0], seq[n][1]) in mod_ships.pl_ships[y]:
