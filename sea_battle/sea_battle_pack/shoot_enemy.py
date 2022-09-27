@@ -10,11 +10,14 @@ seq_1 = [(1, 1), (3, 1), (2, 2), (1, 3), (5, 1), (4, 2), (3, 3), (2, 4), (1, 5),
          (9, 3), (8, 4), (7, 5), (6, 6), (5, 7), (4, 8), (3, 9), (2, 10), (10, 4), (9, 5), (8, 6), (7, 7), (6, 8),
          (5, 9), (4, 10), (10, 6), (9, 7), (8, 8), (7, 9), (6, 10), (10, 8), (9, 9), (8, 10), (10, 10)]
 
+count_en = 0
+
 
 def shoot_en(x):
     flag = True
     global seq
     global seq_1
+    global count_en
 
     while flag:
         sum_1 = 0
@@ -76,6 +79,7 @@ def shoot_en(x):
                                                         continue
                                                     else:
                                                         dots(x, n)
+                                                        count_en += 1
                                                         flag = True
                                                         break
                                                 if flag:
@@ -109,6 +113,7 @@ def shoot_en(x):
                                                 continue
                                             else:
                                                 dots(x, n)
+                                                count_en += 1
                                                 flag = True
                                                 break
                                         if flag:
@@ -141,6 +146,7 @@ def shoot_en(x):
                                         continue
                                     else:
                                         dots(x, n)
+                                        count_en += 1
                                         flag = True
                                         break
                                 if flag:
@@ -173,6 +179,7 @@ def shoot_en(x):
                                 continue
                             else:
                                 dots(x, n)
+                                count_en += 1
                                 flag = True
                                 break
                         if flag:
@@ -235,6 +242,7 @@ def shoot_en(x):
                                                         continue
                                                     else:
                                                         dots(x, n)
+                                                        count_en += 1
                                                         flag = True
                                                         break
                                                 if flag:
@@ -268,6 +276,7 @@ def shoot_en(x):
                                                 continue
                                             else:
                                                 dots(x, n)
+                                                count_en += 1
                                                 flag = True
                                                 break
                                         if flag:
@@ -300,6 +309,7 @@ def shoot_en(x):
                                         continue
                                     else:
                                         dots(x, n)
+                                        count_en += 1
                                         flag = True
                                         break
                                 if flag:
@@ -332,6 +342,7 @@ def shoot_en(x):
                                 continue
                             else:
                                 dots(x, n)
+                                count_en += 1
                                 flag = True
                                 break
                         if flag:
@@ -341,6 +352,7 @@ def shoot_en(x):
 
                 else:
                     dots(x, n)
+                    count_en += 1
                     flag = True
                     break
 
@@ -359,6 +371,7 @@ def shoot_en(x):
                     break
                 elif x[seq_1[a][0]][seq_1[a][1]] == 2:
                     x[seq_1[a][0]][seq_1[a][1]] = 3
+                    count_en += 1
                     flag = True
                     print("\n" * 50)
                     x.board_print()

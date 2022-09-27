@@ -8,7 +8,9 @@ class BoardClass:
 
     def board_print(self):
         a = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
-        print("                   ЗСУ                                            русня ")
+        print("                   ЗСУ                                           русня ")
+        print(f"                потопив:{shoot_player.count_pl}                                      "
+              f"потопив:{shoot_enemy.count_en}")
         print("┏━━━" + "┳━━━" * 9 + "┓" + " "*7 + "┏━━━" + "┳━━━" * 9 + "┓")
         for i in range(1, 11):
             for j in range(1, 11):
@@ -29,7 +31,7 @@ class BoardClass:
                 elif self[i][j] == 1:
                     print("", ".", end=" ")
                 elif self[i][j] == 2:
-                    print("", " ", end=" ")
+                    print("", "S", end=" ")
                 elif self[i][j] == 3:
                     print("", "X", end=" ")
             print("┃")
@@ -39,6 +41,30 @@ class BoardClass:
 
     def __getitem__(self, key):
         return self.board[key]
+
+import shoot_enemy
+import shoot_player
+
+def count_pl(x):
+    import mod_ships
+    c_pl = 0
+    for y in range(10):
+        for u in range(len(mod_ships.en_ships[y])):
+            if x[mod_ships.en_ships[y][u][0]][mod_ships.en_ships[y][u][1]] != 3:
+                break
+            c_pl += 1
+    return c_pl
+
+
+def count_en(x):
+    import mod_ships
+    c_en = 0
+    for y in range(10):
+        for u in range(len(mod_ships.pl_ships[y])):
+            if x[mod_ships.pl_ships[y][u][0]][mod_ships.pl_ships[y][u][1]] != 3:
+                break
+            c_en += 1
+    return c_en
 
 
 if __name__ == "__main__":

@@ -1,8 +1,10 @@
 import mod_ships
+count_pl = 0
 
 
 def shoot_pl(x):
     flag = True
+    global count_pl
 
     while flag:
         sum_1 = 0
@@ -88,6 +90,7 @@ def shoot_pl(x):
             if flag:
                 continue
             else:
+                count_pl += 1
                 for y in range(10):
                     if (i, j) in mod_ships.en_ships[y]:
                         if len(mod_ships.en_ships[y]) == 1:
