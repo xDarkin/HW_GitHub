@@ -66,14 +66,19 @@ def shoot_en(x):
                                                                         != 3:
                                                                     flag = True
                                                                     break
+                                                                else:
+                                                                    flag = False
                                                     if flag:
                                                         continue
                                                     else:
                                                         dots(x, n)
                                                         flag = True
-                                                        continue
-                                        if x[seq[n][0]][seq[n][1] - q] == 1:
-                                            break
+                                                        break
+                                                if flag:
+                                                    break
+                                            if flag:
+                                                break
+
                                         elif x[seq[n][0]][seq[n][1] - q] == 3:
                                             continue
                                         elif x[seq[n][0]][seq[n][1] - q] == 0:
@@ -92,14 +97,19 @@ def shoot_en(x):
                                                                 != 3:
                                                             flag = True
                                                             break
+                                                        else:
+                                                            flag = False
                                             if flag:
                                                 continue
                                             else:
                                                 dots(x, n)
                                                 flag = True
-                                                continue
-                                if x[seq[n][0] + o][seq[n][1]] == 1:
-                                    break
+                                                break
+                                        if flag:
+                                            break
+                                    if flag:
+                                        break
+
                                 elif x[seq[n][0] + o][seq[n][1]] == 3:
                                     continue
                                 elif x[seq[n][0] + o][seq[n][1]] == 0:
@@ -117,14 +127,19 @@ def shoot_en(x):
                                                 if x[mod_ships.pl_ships[y][u][0]][mod_ships.pl_ships[y][u][1]] != 3:
                                                     flag = True
                                                     break
+                                                else:
+                                                    flag = False
                                     if flag:
                                         continue
                                     else:
                                         dots(x, n)
                                         flag = True
-                                        continue
-                        if x[seq[n][0] - m][seq[n][1]] == 1:
-                            break
+                                        break
+                                if flag:
+                                    break
+                            if flag:
+                                break
+
                         elif x[seq[n][0] - m][seq[n][1]] == 3:
                             continue
                         elif x[seq[n][0] - m][seq[n][1]] == 0:
@@ -142,12 +157,18 @@ def shoot_en(x):
                                         if x[mod_ships.pl_ships[y][u][0]][mod_ships.pl_ships[y][u][1]] != 3:
                                             flag = True
                                             break
+                                        else:
+                                            flag = False
                             if flag:
                                 continue
                             else:
                                 dots(x, n)
                                 flag = True
-                                continue
+                                break
+                        if flag:
+                            break
+                    if flag:
+                        break
 
             elif x[seq[n][0]][seq[n][1]] == 0:
                 x[seq[n][0]][seq[n][1]] = 1
@@ -194,14 +215,19 @@ def shoot_en(x):
                                                                         != 3:
                                                                     flag = True
                                                                     break
+                                                                else:
+                                                                    flag = False
                                                     if flag:
                                                         continue
                                                     else:
                                                         dots(x, n)
                                                         flag = True
-                                                        continue
-                                        if x[seq[n][0]][seq[n][1] - q] == 1:
-                                            break
+                                                        break
+                                                if flag:
+                                                    break
+                                            if flag:
+                                                break
+
                                         elif x[seq[n][0]][seq[n][1] - q] == 3:
                                             continue
                                         elif x[seq[n][0]][seq[n][1] - q] == 0:
@@ -220,14 +246,19 @@ def shoot_en(x):
                                                                 != 3:
                                                             flag = True
                                                             break
+                                                        else:
+                                                            flag = False
                                             if flag:
                                                 continue
                                             else:
                                                 dots(x, n)
                                                 flag = True
-                                                continue
-                                if x[seq[n][0] + o][seq[n][1]] == 1:
-                                    break
+                                                break
+                                        if flag:
+                                            break
+                                    if flag:
+                                        break
+
                                 elif x[seq[n][0] + o][seq[n][1]] == 3:
                                     continue
                                 elif x[seq[n][0] + o][seq[n][1]] == 0:
@@ -245,14 +276,19 @@ def shoot_en(x):
                                                 if x[mod_ships.pl_ships[y][u][0]][mod_ships.pl_ships[y][u][1]] != 3:
                                                     flag = True
                                                     break
+                                                else:
+                                                    flag = False
                                     if flag:
                                         continue
                                     else:
                                         dots(x, n)
                                         flag = True
-                                        continue
-                        if x[seq[n][0] - m][seq[n][1]] == 1:
-                            break
+                                        break
+                                if flag:
+                                    break
+                            if flag:
+                                break
+
                         elif x[seq[n][0] - m][seq[n][1]] == 3:
                             continue
                         elif x[seq[n][0] - m][seq[n][1]] == 0:
@@ -270,16 +306,23 @@ def shoot_en(x):
                                         if x[mod_ships.pl_ships[y][u][0]][mod_ships.pl_ships[y][u][1]] != 3:
                                             flag = True
                                             break
+                                        else:
+                                            flag = False
                             if flag:
                                 continue
                             else:
                                 dots(x, n)
                                 flag = True
-                                continue
+                                break
+                        if flag:
+                            break
+                    if flag:
+                        break
+
                 else:
                     dots(x, n)
                     flag = True
-                    continue
+                    break
 
 
 def dots(x, n):
