@@ -29,7 +29,7 @@ class BoardClass:
                 elif self[i][j] == 1:
                     print("", ".", end=" ")
                 elif self[i][j] == 2:
-                    print("", "S", end=" ")
+                    print("", " ", end=" ")
                 elif self[i][j] == 3:
                     print("", "X", end=" ")
             print("┃")

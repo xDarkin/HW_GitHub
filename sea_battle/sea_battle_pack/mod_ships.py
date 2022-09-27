@@ -278,42 +278,52 @@ def pos_manual(x):
     print("Розмістіть чотирипалубник:")
     pos_man(x, ship.ship_41)
     pl_ship_41 = p
+    print("\n" * 50)
     x.board_print()
     print("Розмістіть трипалубник:")
     pos_man(x, ship.ship_31)
     pl_ship_31 = p
+    print("\n" * 50)
     x.board_print()
     print("Розмістіть трипалубник:")
     pos_man(x, ship.ship_32)
     pl_ship_32 = p
+    print("\n" * 50)
     x.board_print()
     print("Розмістіть двопалубник:")
     pos_man(x, ship.ship_21)
     pl_ship_21 = p
+    print("\n" * 50)
     x.board_print()
     print("Розмістіть двопалубник:")
     pos_man(x, ship.ship_22)
     pl_ship_22 = p
+    print("\n" * 50)
     x.board_print()
     print("Розмістіть двопалубник:")
     pos_man(x, ship.ship_23)
     pl_ship_23 = p
+    print("\n" * 50)
     x.board_print()
     print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_11)
     pl_ship_11 = p
+    print("\n" * 50)
     x.board_print()
     print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_12)
     pl_ship_12 = p
+    print("\n" * 50)
     x.board_print()
     print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_13)
     pl_ship_13 = p
+    print("\n" * 50)
     x.board_print()
     print("Розмістіть однопалубник:")
     pos_man(x, ship.ship_14)
     pl_ship_14 = p
+    print("\n" * 50)
     x.board_print()
     global pl_ships
     pl_ships = [pl_ship_41, pl_ship_31, pl_ship_32, pl_ship_21, pl_ship_22, pl_ship_23,

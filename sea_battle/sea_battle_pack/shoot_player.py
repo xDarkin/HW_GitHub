@@ -1,11 +1,8 @@
 import mod_ships
 
-winner = ""
-
 
 def shoot_pl(x):
     flag = True
-    global winner
 
     while flag:
         sum_1 = 0
@@ -15,7 +12,6 @@ def shoot_pl(x):
                     sum_1 += x[i][j]
         if sum_1 == 60:
             print("Вітаємо! Ви перемогли!!! Слава ЗСУ!!!")
-            winner = "player"
             break
 
         while True:
@@ -73,7 +69,9 @@ def shoot_pl(x):
 
         if x[i][j] == 0:
             x[i][j] = 1
+            print("\n"*50)
             x.board_print()
+            print("Ви не поцілили!")
             break
 
         if x[i][j] == 2:
@@ -83,7 +81,9 @@ def shoot_pl(x):
                     for u in range(len(mod_ships.en_ships[y])):
                         if x[mod_ships.en_ships[y][u][0]][mod_ships.en_ships[y][u][1]] != 3:
                             flag = True
+                            print("\n" * 50)
                             x.board_print()
+                            print("Є влучення!")
                             break
             if flag:
                 continue
@@ -99,7 +99,9 @@ def shoot_pl(x):
                             x[mod_ships.en_ships[y][0][0] + 1][mod_ships.en_ships[y][0][1] - 1] = 1
                             x[mod_ships.en_ships[y][0][0] + 1][mod_ships.en_ships[y][0][1]] = 1
                             x[mod_ships.en_ships[y][0][0] + 1][mod_ships.en_ships[y][0][1] + 1] = 1
+                            print("\n" * 50)
                             x.board_print()
+                            print("Є влучення!")
                             flag = True
                             continue
                         else:
@@ -110,7 +112,9 @@ def shoot_pl(x):
                                 for u in range(len(mod_ships.en_ships[y]) + 2):
                                     x[mod_ships.en_ships[y][0][0] - 1][mod_ships.en_ships[y][0][1] - 1 + u] = 1
                                     x[mod_ships.en_ships[y][0][0] + 1][mod_ships.en_ships[y][0][1] - 1 + u] = 1
+                                    print("\n" * 50)
                                     x.board_print()
+                                    print("Є влучення!")
                                     flag = True
                                     continue
                             else:
@@ -120,6 +124,8 @@ def shoot_pl(x):
                                 for u in range(len(mod_ships.en_ships[y]) + 2):
                                     x[mod_ships.en_ships[y][0][0] - 1 + u][mod_ships.en_ships[y][0][1] - 1] = 1
                                     x[mod_ships.en_ships[y][0][0] - 1 + u][mod_ships.en_ships[y][0][1] + 1] = 1
+                                    print("\n" * 50)
                                     x.board_print()
+                                    print("Є влучення!")
                                     flag = True
                                     continue

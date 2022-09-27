@@ -1,6 +1,5 @@
 import mod_ships
 
-winner = ""
 seq = [(4, 1), (3, 2), (2, 3), (1, 4), (8, 1), (7, 2), (6, 3), (5, 4), (4, 5), (3, 6), (2, 7), (1, 8), (10, 3), (9, 4),
        (8, 5), (7, 6), (6, 7), (5, 8), (4, 9), (3, 10), (10, 7), (9, 8), (8, 9), (7, 10), (2, 1), (1, 2), (6, 1),
        (5, 2), (4, 3), (3, 4), (2, 5), (1, 6), (10, 1), (9, 2), (8, 3), (7, 4), (6, 5), (5, 6), (4, 7), (3, 8), (2, 9),
@@ -14,7 +13,6 @@ seq_1 = [(1, 1), (3, 1), (2, 2), (1, 3), (5, 1), (4, 2), (3, 3), (2, 4), (1, 5),
 
 def shoot_en(x):
     flag = True
-    global winner
     global seq
     global seq_1
 
@@ -26,7 +24,6 @@ def shoot_en(x):
                     sum_1 += x[i][j]
         if sum_1 == 60:
             print("Ворог переміг! Наступного разу бий без жалю!!!")
-            winner = "enemy"
             break
 
         n = -1
@@ -56,11 +53,13 @@ def shoot_en(x):
                                                     continue
                                                 elif x[seq[n][0]][seq[n][1] + w] == 0:
                                                     x[seq[n][0]][seq[n][1] + w] = 1
+                                                    print("\n" * 50)
                                                     x.board_print()
-                                                    print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                                                    print("Ворог не поцілив!")
                                                     return
                                                 elif x[seq[n][0]][seq[n][1] + w] == 2:
                                                     x[seq[n][0]][seq[n][1] + w] = 3
+                                                    print("\n" * 50)
                                                     x.board_print()
                                                     print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                                                     for y in range(10):
@@ -88,11 +87,13 @@ def shoot_en(x):
                                             continue
                                         elif x[seq[n][0]][seq[n][1] - q] == 0:
                                             x[seq[n][0]][seq[n][1] - q] = 1
+                                            print("\n" * 50)
                                             x.board_print()
-                                            print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                                            print("Ворог не поцілив!")
                                             return
                                         elif x[seq[n][0]][seq[n][1] - q] == 2:
                                             x[seq[n][0]][seq[n][1] - q] = 3
+                                            print("\n" * 50)
                                             x.board_print()
                                             print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                                             for y in range(10):
@@ -119,11 +120,13 @@ def shoot_en(x):
                                     continue
                                 elif x[seq[n][0] + o][seq[n][1]] == 0:
                                     x[seq[n][0] + o][seq[n][1]] = 1
+                                    print("\n" * 50)
                                     x.board_print()
-                                    print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                                    print("Ворог не поцілив!")
                                     return
                                 elif x[seq[n][0] + o][seq[n][1]] == 2:
                                     x[seq[n][0] + o][seq[n][1]] = 3
+                                    print("\n" * 50)
                                     x.board_print()
                                     print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                                     for y in range(10):
@@ -149,11 +152,13 @@ def shoot_en(x):
                             continue
                         elif x[seq[n][0] - m][seq[n][1]] == 0:
                             x[seq[n][0] - m][seq[n][1]] = 1
+                            print("\n" * 50)
                             x.board_print()
-                            print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                            print("Ворог не поцілив!")
                             return
                         elif x[seq[n][0] - m][seq[n][1]] == 2:
                             x[seq[n][0] - m][seq[n][1]] = 3
+                            print("\n" * 50)
                             x.board_print()
                             print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                             for y in range(10):
@@ -177,12 +182,14 @@ def shoot_en(x):
 
             elif x[seq[n][0]][seq[n][1]] == 0:
                 x[seq[n][0]][seq[n][1]] = 1
+                print("\n" * 50)
                 x.board_print()
-                print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                print("Ворог не поцілив!")
                 flag = False
                 break
             elif x[seq[n][0]][seq[n][1]] == 2:
                 x[seq[n][0]][seq[n][1]] = 3
+                print("\n" * 50)
                 x.board_print()
                 print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                 for y in range(10):
@@ -205,11 +212,13 @@ def shoot_en(x):
                                                     continue
                                                 elif x[seq[n][0]][seq[n][1] + w] == 0:
                                                     x[seq[n][0]][seq[n][1] + w] = 1
+                                                    print("\n" * 50)
                                                     x.board_print()
-                                                    print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                                                    print("Ворог не поцілив!")
                                                     return
                                                 elif x[seq[n][0]][seq[n][1] + w] == 2:
                                                     x[seq[n][0]][seq[n][1] + w] = 3
+                                                    print("\n" * 50)
                                                     x.board_print()
                                                     print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                                                     for y in range(10):
@@ -237,11 +246,13 @@ def shoot_en(x):
                                             continue
                                         elif x[seq[n][0]][seq[n][1] - q] == 0:
                                             x[seq[n][0]][seq[n][1] - q] = 1
+                                            print("\n" * 50)
                                             x.board_print()
-                                            print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                                            print("Ворог не поцілив!")
                                             return
                                         elif x[seq[n][0]][seq[n][1] - q] == 2:
                                             x[seq[n][0]][seq[n][1] - q] = 3
+                                            print("\n" * 50)
                                             x.board_print()
                                             print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                                             for y in range(10):
@@ -268,11 +279,13 @@ def shoot_en(x):
                                     continue
                                 elif x[seq[n][0] + o][seq[n][1]] == 0:
                                     x[seq[n][0] + o][seq[n][1]] = 1
+                                    print("\n" * 50)
                                     x.board_print()
-                                    print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                                    print("Ворог не поцілив!")
                                     return
                                 elif x[seq[n][0] + o][seq[n][1]] == 2:
                                     x[seq[n][0] + o][seq[n][1]] = 3
+                                    print("\n" * 50)
                                     x.board_print()
                                     print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                                     for y in range(10):
@@ -298,11 +311,13 @@ def shoot_en(x):
                             continue
                         elif x[seq[n][0] - m][seq[n][1]] == 0:
                             x[seq[n][0] - m][seq[n][1]] = 1
+                            print("\n" * 50)
                             x.board_print()
-                            print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                            print("Ворог не поцілив!")
                             return
                         elif x[seq[n][0] - m][seq[n][1]] == 2:
                             x[seq[n][0] - m][seq[n][1]] = 3
+                            print("\n" * 50)
                             x.board_print()
                             print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                             for y in range(10):
@@ -338,12 +353,14 @@ def shoot_en(x):
                     continue
                 elif x[seq_1[a][0]][seq_1[a][1]] == 0:
                     x[seq_1[a][0]][seq_1[a][1]] = 1
+                    print("\n" * 50)
                     x.board_print()
-                    print(input("Ворог не поцілив. Натисніть клавішу Enter: "))
+                    print("Ворог не поцілив!")
                     break
                 elif x[seq_1[a][0]][seq_1[a][1]] == 2:
                     x[seq_1[a][0]][seq_1[a][1]] = 3
                     flag = True
+                    print("\n" * 50)
                     x.board_print()
                     print(input("Ворог поцілив. Натисніть клавішу Enter: "))
                     if x[seq_1[a][0] - 1][seq_1[a][1]] == 0:
@@ -390,4 +407,5 @@ def dots(x, n):
                             mod_ships.pl_ships[y][0][1] - 1] = 1
                         x[mod_ships.pl_ships[y][0][0] - 1 + u][
                             mod_ships.pl_ships[y][0][1] + 1] = 1
+    print("\n" * 50)
     x.board_print()
